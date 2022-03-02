@@ -1,1 +1,1 @@
-tutorial Butique Ado with Mr Zielinski / Code Institute
+tutorial Butique Ado with Chris Zielinski / Code Institute
