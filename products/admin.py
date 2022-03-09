@@ -12,7 +12,8 @@ class ProductAdmin(admin.ModelAdmin):
         'rating',
         'image',
     )
-
+    # neeeds to be a tuple, add comma
+    # to reverse order add minus at the beggining
     ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
