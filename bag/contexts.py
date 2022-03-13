@@ -17,16 +17,33 @@ def bag_contents(request):
 
     # forloops all items in the bag gets the product, quantity and price
     # appends the list bag_items with the dictionary of item id, quantity and product name
-    for item_id, quantity in bag.items():
-
-        product = get_object_or_404(Product, pk=item_id)
-        total += int(quantity) * product.price
-        product_count += int(quantity)
-        bag_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
+    for item_id, item_data in bag.items():
+        if isinstance(item_data, int):
+            # if item data is an integer, we will get quantity as an integer
+            # from item data
+            product = get_object_or_404(Product, pk=item_id)
+            total += int(item_data) * float(product.price)
+            product_count += int(item_data)
+            bag_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'product': product,
+            })
+        else:
+            product = get_object_or_404(Product, pk=item_id)
+            # item data is a dictionary containing size and quantity
+            for size, quantity in item_data['items_by_size'].items():
+                print(quantity)
+                print(int(quantity))
+                total += int(quantity) * float(product.price)
+                product_count += int(quantity)
+                print(f'PRODUCT COUNT {product_count} ')
+                bag_items.append({
+                    'item_id': item_id,
+                    'quantity': item_data,
+                    'product': product,
+                    'size': size,
+                })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
