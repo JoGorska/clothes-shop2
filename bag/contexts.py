@@ -22,8 +22,8 @@ def bag_contents(request):
             # if item data is an integer, we will get quantity as an integer
             # from item data
             product = get_object_or_404(Product, pk=item_id)
-            total += int(item_data) * float(product.price)
-            product_count += int(item_data)
+            total += item_data * float(product.price)
+            product_count += item_data
             bag_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
@@ -33,11 +33,8 @@ def bag_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             # item data is a dictionary containing size and quantity
             for size, quantity in item_data['items_by_size'].items():
-                print(quantity)
-                print(int(quantity))
-                total += int(quantity) * float(product.price)
-                product_count += int(quantity)
-                print(f'PRODUCT COUNT {product_count} ')
+                total += quantity * float(product.price)
+                product_count += quantity
                 bag_items.append({
                     'item_id': item_id,
                     'quantity': item_data,

@@ -15,7 +15,7 @@ def add_to_bag(request, item_id):
     Add quantity of the specified product to the shopping bag
     """
     # it will come from template as a string - need to convert to integer
-    quantity = request.POST.get('quantity')
+    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
     if 'product_size' in request.POST:
