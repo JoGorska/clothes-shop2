@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -15,6 +17,7 @@ def add_to_bag(request, item_id):
     Add quantity of the specified product to the shopping bag
     """
     # it will come from template as a string - need to convert to integer
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
@@ -37,6 +40,7 @@ def add_to_bag(request, item_id):
             bag[item_id] += quantity
         else:
             bag[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -59,14 +63,44 @@ def adjust_bag(request, item_id):
         if quantity > 0:
             bag[item_id]['items_by_size'][size] = quantity
         else:
-            del bag[item_id]['items_by_size'][size] 
- # if no size - increments the quantity of items
+            # if the quantity is set to zero 
+            del bag[item_id]['items_by_size'][size]
+            # if zero items of particular size, remove item from bag
+            if not bag[item_id]['items_by_size']:
+                bag.pop(item_id)
+# if no size - increments the quantity of items
     else:
         if quantity > 0:
             bag[item_id] = quantity
         else:
-            bag.pop[item_id]
+            bag.pop(item_id)
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 
 
+def remove_from_bag(request, item_id):
+    """
+    Remove item from the shopping bag
+    """
+    try:
+        size = None
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+        bag = request.session.get('bag', {})
+        # if item has a size it checks if item of that size already in the bag
+        # increments the number of items with this size
+        if size:
+            del bag[item_id]['items_by_size'][size]
+            if not bag[item_id]['items_by_size']:
+                bag.pop(item_id)
+    # if no size - increments the quantity of items
+        else:
+            bag.pop(item_id)
+        request.session['bag'] = bag
+        # instead of redirecting, we want return status 200
+        # implying that item was successfully removed
+        # this view will be posted to from javascript function
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        return HttpResponse(status=500)
