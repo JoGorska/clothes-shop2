@@ -49,6 +49,7 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
+    // disable card element to prevent multiple submittions
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
@@ -63,7 +64,6 @@ form.addEventListener('submit', function(ev) {
         'save_info': saveInfo,
     };
     var url = '/checkout/cache_checkout_data/';
-
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -95,6 +95,7 @@ form.addEventListener('submit', function(ev) {
             },
         }).then(function(result) {
             if (result.error) {
+                // card error is added to error div
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
                     <span class="icon" role="alert">
@@ -104,6 +105,7 @@ form.addEventListener('submit', function(ev) {
                 $(errorDiv).html(html);
                 $('#payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
+                // if there is an error, the card is re enabled to allow user to fix issue
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
