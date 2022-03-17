@@ -6,7 +6,7 @@ if os.path.isfile("env.py"):
     import env
 from django.conf import settings
 from .forms import OrderForm
-from bag.context import bag_contents
+from bag.contexts import bag_contents
 
 import stripe
 

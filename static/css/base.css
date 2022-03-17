@@ -1,3 +1,22 @@
+/* ravenSong seem too tall, might be good for header */
+@font-face {
+    font-family: ravenSong;
+    src: url(ravenSong.ttf)
+}
+
+/* horrorType not visible on white background, even in bold */
+@font-face {
+    font-family: horrorType;
+    src: url(HorrorTypeDemoRegular.ttf)
+}
+
+/* well ballanced but reqiuirers font-weight 900*/
+@font-face {
+    font-family: octoberCrow;
+    src: url(octoberCrow.ttf);
+    /* font-weight: 900; */
+}
+
 html {
     height: 100%;
 }
