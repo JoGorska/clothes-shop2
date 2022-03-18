@@ -6,6 +6,10 @@ class Category(models.Model):
     categories of products
     """
     class Meta:
+        """
+        helper class to improve the way categories display in admin
+        in plural form
+        """
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
@@ -13,7 +17,7 @@ class Category(models.Model):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
     def get_friendly_name(self):
         """
@@ -37,4 +41,4 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
