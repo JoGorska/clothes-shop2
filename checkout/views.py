@@ -111,8 +111,6 @@ def checkout(request):
         )
 
         order_form = OrderForm()
-
-        print(f'THIS IS INTENT {intent}')
        
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
