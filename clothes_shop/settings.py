@@ -124,6 +124,7 @@ WSGI_APPLICATION = 'clothes_shop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# sqlite database ??? when attach postgresql???
 
 DATABASES = {
     'default': {
