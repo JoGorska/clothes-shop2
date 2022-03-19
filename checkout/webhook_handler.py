@@ -41,6 +41,7 @@ class StripeWHHandler:
 
         order_exists = False
         attempt = 1
+        # wile loop will make 5 attempts to check if order was already created
         while attempt <= 5:
             try:
                 # gets order details from the database
@@ -58,12 +59,14 @@ class StripeWHHandler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
+                # breaks out of the loop if order exists
                 order_exists = True
                 break
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            # if order exists returns 200 response
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
