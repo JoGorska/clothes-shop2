@@ -7,7 +7,7 @@ from .models import Order, OrderLineItem
 from products.models import Product
 
 
-class StripeWHHandler:
+class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
@@ -47,6 +47,7 @@ class StripeWHHandler:
                 # gets order details from the database
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
+                    # iexact ignores the uppercase
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
