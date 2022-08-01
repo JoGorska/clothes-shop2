@@ -1,3 +1,5 @@
+''' bag contents context tool
+'''
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
@@ -16,7 +18,8 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     # forloops all items in the bag gets the product, quantity and price
-    # appends the list bag_items with the dictionary of item id, quantity and product name
+    # appends the list bag_items with the dictionary of item id,
+    #  quantity and product name
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             # if item data is an integer, we will get quantity as an integer
