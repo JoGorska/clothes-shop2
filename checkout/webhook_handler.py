@@ -1,3 +1,4 @@
+'''webhook handler for checkout'''
 import json
 import time
 
@@ -11,7 +12,7 @@ from products.models import Product
 from profiles.models import UserProfile
 
 
-class StripeWHHandler:
+class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):

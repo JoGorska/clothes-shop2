@@ -1,3 +1,4 @@
+'''views for checkout app'''
 import json
 import stripe
 
