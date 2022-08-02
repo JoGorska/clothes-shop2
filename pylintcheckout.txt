@@ -1,0 +1,126 @@
+************* Module checkout
+checkout/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/__init__.py:1:0: C0103: Constant name "default_app_config" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module checkout.admin
+checkout/admin.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module checkout.apps
+checkout/apps.py:6:54: C0303: Trailing whitespace (trailing-whitespace)
+checkout/apps.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/apps.py:13:8: C0415: Import outside toplevel (checkout.signals) (import-outside-toplevel)
+checkout/apps.py:13:8: W0611: Unused import checkout.signals (unused-import)
+************* Module checkout.forms
+checkout/forms.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/forms.py:9:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module checkout.models
+checkout/models.py:52:0: C0301: Line too long (102/100) (line-too-long)
+checkout/models.py:80:0: C0301: Line too long (113/100) (line-too-long)
+checkout/models.py:84:0: C0301: Line too long (113/100) (line-too-long)
+checkout/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/models.py:38:4: R0201: Method could be a function (no-self-use)
+checkout/models.py:52:27: E1101: Instance of 'Order' has no 'lineitems' member (no-member)
+checkout/models.py:91:30: E1101: Instance of 'ForeignKey' has no 'price' member (no-member)
+checkout/models.py:95:22: E1101: Instance of 'ForeignKey' has no 'sku' member (no-member)
+checkout/models.py:95:50: E1101: Instance of 'ForeignKey' has no 'order_number' member (no-member)
+************* Module checkout.signals
+checkout/signals.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/signals.py:8:19: W0613: Unused argument 'sender' (unused-argument)
+checkout/signals.py:8:37: W0613: Unused argument 'created' (unused-argument)
+checkout/signals.py:8:0: W0613: Unused argument 'kwargs' (unused-argument)
+checkout/signals.py:19:21: W0613: Unused argument 'sender' (unused-argument)
+checkout/signals.py:19:0: W0613: Unused argument 'kwargs' (unused-argument)
+************* Module checkout.tests
+checkout/tests.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/tests.py:1:0: W0611: Unused TestCase imported from django.test (unused-import)
+************* Module checkout.urls
+checkout/urls.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module checkout.views
+checkout/views.py:59:65: C0303: Trailing whitespace (trailing-whitespace)
+checkout/views.py:71:77: C0303: Trailing whitespace (trailing-whitespace)
+checkout/views.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/views.py:30:11: W0703: Catching too general exception Exception (broad-except)
+checkout/views.py:30:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+checkout/views.py:36:0: R0914: Too many local variables (21/15) (too-many-locals)
+checkout/views.py:60:8: R1705: Unnecessary "else" after "return" (no-else-return)
+checkout/views.py:70:30: E1101: Class 'Product' has no 'objects' member (no-member)
+checkout/views.py:91:23: E1101: Class 'Product' has no 'DoesNotExist' member (no-member)
+checkout/views.py:43:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+checkout/views.py:125:26: E1101: Class 'UserProfile' has no 'objects' member (no-member)
+checkout/views.py:137:19: E1101: Class 'UserProfile' has no 'DoesNotExist' member (no-member)
+checkout/views.py:36:0: R0912: Too many branches (14/12) (too-many-branches)
+checkout/views.py:164:18: E1101: Class 'UserProfile' has no 'objects' member (no-member)
+************* Module checkout.webhook_handler
+checkout/webhook_handler.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+checkout/webhook_handler.py:107:81: C0303: Trailing whitespace (trailing-whitespace)
+checkout/webhook_handler.py:112:0: C0301: Line too long (107/100) (line-too-long)
+checkout/webhook_handler.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/webhook_handler.py:14:0: C0103: Class name "StripeWH_Handler" doesn't conform to PascalCase naming style (invalid-name)
+checkout/webhook_handler.py:20:4: R0201: Method could be a function (no-self-use)
+checkout/webhook_handler.py:38:4: R0201: Method could be a function (no-self-use)
+checkout/webhook_handler.py:46:4: R0914: Too many local variables (23/15) (too-many-locals)
+checkout/webhook_handler.py:68:22: E1101: Class 'UserProfile' has no 'objects' member (no-member)
+checkout/webhook_handler.py:85:24: E1101: Class 'Order' has no 'objects' member (no-member)
+checkout/webhook_handler.py:103:19: E1101: Class 'Order' has no 'DoesNotExist' member (no-member)
+checkout/webhook_handler.py:106:8: R1705: Unnecessary "else" after "return" (no-else-return)
+checkout/webhook_handler.py:150:19: W0703: Catching too general exception Exception (broad-except)
+checkout/webhook_handler.py:118:24: E1101: Class 'Order' has no 'objects' member (no-member)
+checkout/webhook_handler.py:133:30: E1101: Class 'Product' has no 'objects' member (no-member)
+checkout/webhook_handler.py:150:12: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+checkout/webhook_handler.py:46:4: R0912: Too many branches (14/12) (too-many-branches)
+checkout/webhook_handler.py:166:4: R0201: Method could be a function (no-self-use)
+checkout/webhook_handler.py:10:0: C0411: first party import "from products.models import Product" should be placed before "from .models import Order, OrderLineItem" (wrong-import-order)
+checkout/webhook_handler.py:11:0: C0411: first party import "from profiles.models import UserProfile" should be placed before "from .models import Order, OrderLineItem" (wrong-import-order)
+************* Module checkout.webhooks
+checkout/webhooks.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/webhooks.py:33:11: W0703: Catching too general exception Exception (broad-except)
+checkout/webhooks.py:27:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+checkout/webhooks.py:30:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+checkout/webhooks.py:33:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+checkout/webhooks.py:27:4: W0612: Unused variable 'e' (unused-variable)
+checkout/webhooks.py:8:0: C0411: third party import "import stripe" should be placed before "from checkout.webhook_handler import StripeWH_Handler" (wrong-import-order)
+************* Module checkout.migrations.0001_initial
+checkout/migrations/0001_initial.py:19:0: C0301: Line too long (117/100) (line-too-long)
+checkout/migrations/0001_initial.py:39:0: C0301: Line too long (117/100) (line-too-long)
+checkout/migrations/0001_initial.py:42:0: C0301: Line too long (104/100) (line-too-long)
+checkout/migrations/0001_initial.py:43:0: C0301: Line too long (137/100) (line-too-long)
+checkout/migrations/0001_initial.py:44:0: C0301: Line too long (115/100) (line-too-long)
+checkout/migrations/0001_initial.py:1:0: C0103: Module name "0001_initial" doesn't conform to snake_case naming style (invalid-name)
+checkout/migrations/0001_initial.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/migrations/0001_initial.py:7:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module checkout.migrations.0002_auto_20220319_1300
+checkout/migrations/0002_auto_20220319_1300.py:1:0: C0103: Module name "0002_auto_20220319_1300" doesn't conform to snake_case naming style (invalid-name)
+checkout/migrations/0002_auto_20220319_1300.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/migrations/0002_auto_20220319_1300.py:6:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module checkout.migrations.0003_alter_order_country
+checkout/migrations/0003_alter_order_country.py:1:0: C0103: Module name "0003_alter_order_country" doesn't conform to snake_case naming style (invalid-name)
+checkout/migrations/0003_alter_order_country.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/migrations/0003_alter_order_country.py:7:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module checkout.migrations.0004_order_user_profile
+checkout/migrations/0004_order_user_profile.py:18:0: C0301: Line too long (155/100) (line-too-long)
+checkout/migrations/0004_order_user_profile.py:1:0: C0103: Module name "0004_order_user_profile" doesn't conform to snake_case naming style (invalid-name)
+checkout/migrations/0004_order_user_profile.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+checkout/migrations/0004_order_user_profile.py:7:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module checkout.migrations.__init__
+checkout/migrations/__init__.py:1:0: R0801: Similar lines in 2 files
+==checkout.views:[69:90]
+==checkout.webhook_handler:[132:149]
+                    product = Product.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                    else:
+                        for size, quantity in item_data['items_by_size'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                product=product,
+                                quantity=quantity,
+                                product_size=size,
+                            )
+                            order_line_item.save() (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 5.39/10
+

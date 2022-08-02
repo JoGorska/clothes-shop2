@@ -1,0 +1,6 @@
+bag/views.py:1:80: E501 line too long (87 > 79 characters)
+bag/views.py:48:80: E501 line too long (91 > 79 characters)
+bag/views.py:78:45: W291 trailing whitespace
+bag/views.py:112:80: E501 line too long (98 > 79 characters)
+bag/templatetags/bag_tools.py:6:1: E302 expected 2 blank lines, found 1
+bag/templatetags/bag_tools.py:9:49: W291 trailing whitespace

@@ -1,0 +1,26 @@
+************* Module bag.admin
+bag/admin.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bag/admin.py:1:0: W0611: Unused admin imported from django.contrib (unused-import)
+************* Module bag.apps
+bag/apps.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bag/apps.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module bag.models
+bag/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bag/models.py:1:0: W0611: Unused models imported from django.db (unused-import)
+************* Module bag.tests
+bag/tests.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bag/tests.py:1:0: W0611: Unused TestCase imported from django.test (unused-import)
+************* Module bag.urls
+bag/urls.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module bag.views
+bag/views.py:78:44: C0303: Trailing whitespace (trailing-whitespace)
+bag/views.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+bag/views.py:124:11: W0703: Catching too general exception Exception (broad-except)
+bag/views.py:124:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+************* Module bag.templatetags.bag_tools
+bag/templatetags/bag_tools.py:9:48: C0303: Trailing whitespace (trailing-whitespace)
+bag/templatetags/bag_tools.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 8.65/10 (previous run: 8.65/10, +0.00)
+
