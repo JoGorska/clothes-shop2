@@ -3,7 +3,9 @@ from .models import Product, Category
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
+    '''products admin'''
     list_display = (
         'sku',
         'name',
@@ -16,11 +18,14 @@ class ProductAdmin(admin.ModelAdmin):
     # to reverse order add minus at the beggining
     ordering = ('sku',)
 
+
 class CategoryAdmin(admin.ModelAdmin):
+    '''category admin'''
     list_display = (
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
