@@ -11,3 +11,6 @@ gb postcode
 https://django-localflavor.readthedocs.io/en/latest/localflavor/gb/#:~:text=A%20form%20field%20that%20validates%20its%20input%20is%20a%20UK%20postcode.&text=The%20value%20is%20uppercased%20and,the%20correct%20place%2C%20if%20required.
 
 https://django-localflavor.readthedocs.io/en/latest/
+
+deployed to heroku https://ado-clothes-shop.herokuapp.com/
+deployed to railway.app https://clothes-shop-2.up.railway.app/
