@@ -12,5 +12,5 @@ https://django-localflavor.readthedocs.io/en/latest/localflavor/gb/#:~:text=A%20
 
 https://django-localflavor.readthedocs.io/en/latest/
 
-deployed to heroku https://ado-clothes-shop.herokuapp.com/
-deployed to railway.app https://clothes-shop-2.up.railway.app/
+deployed to heroku but removed due to service becoming paid
+deployed to railway.app https://clothes-shop.up.railway.app/

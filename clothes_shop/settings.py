@@ -34,7 +34,7 @@ DEBUG = development
 if development:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:8000']
 else:
-    ALLOWED_HOSTS = ["ado-clothes-shop.herokuapp.com"]
+    ALLOWED_HOSTS = ["clothes-shop.up.railway.app"]
 
 
 # Application definition
